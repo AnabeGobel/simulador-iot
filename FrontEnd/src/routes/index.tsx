@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "IoT Energia Caálá — Monitoramento Inteligente de Energia" },
+      { title: "SIMIE-Caála — Sistema de Monitoramento Inteligente de Energia Caála" },
       {
         name: "description",
         content:
@@ -79,7 +79,7 @@ function Landing() {
             <Zap className="h-7 w-7 fill-current" />
           </div>
           <div>
-            <p className="text-xl font-bold tracking-tight text-white">IoT Energia</p>
+            <p className="text-xl font-bold tracking-tight text-white">SIMIE</p>
             <p className="text-xs font-bold tracking-widest text-[#10b981]">CAALÁ</p>
           </div>
         </header>

@@ -135,7 +135,7 @@ export function AppShell({
   );
 
   const nav = (forcarLabel = false) => (
-    <nav className="flex flex-1 flex-col gap-1 overflow-y-auto p-3">
+    <nav className="sidebar-scrollbar flex flex-1 flex-col gap-2 overflow-y-auto p-3">
       {itens.map((item) => {
         const ativo = item.to === "/app" ? pathname === "/app" : pathname.startsWith(item.to);
         const mostrarLabel = forcarLabel || !colapsado;
@@ -200,7 +200,7 @@ export function AppShell({
       </div>
       {mostrarLabel && (
         <div className="min-w-0">
-          <p className="truncate text-sm font-bold text-sidebar-foreground">IoT Energia</p>
+          <p className="truncate text-sm font-bold text-sidebar-foreground">SIMIE</p>
           <p className="truncate text-xs text-primary">CAALÁ</p>
         </div>
       )}
@@ -212,7 +212,7 @@ export function AppShell({
       {/* Sidebar Fixa no Desktop com borda lateral continua */}
       <aside
         className={cn(
-          "relative hidden shrink-0 flex-col bg-sidebar border-r border-sidebar-border transition-[width] duration-200 lg:flex",
+          "sticky top-0 hidden h-screen shrink-0 flex-col overflow-hidden bg-sidebar border-r border-sidebar-border transition-[width] duration-200 lg:flex",
           colapsado ? "w-16" : "w-64"
         )}
       >
