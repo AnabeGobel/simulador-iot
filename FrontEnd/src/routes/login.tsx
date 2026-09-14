@@ -11,9 +11,9 @@ import { Checkbox } from "@/components/ui/checkbox";
 export const Route = createFileRoute("/login")({
   head: () => ({
     meta: [
-      { title: "Login — IoT Energia Caálá" },
+      { title: "SIMIE-Caála" },
       { name: "description", content: "Aceda à sua conta do sistema de monitoramento IoT Energia Caálá." },
-      { property: "og:title", content: "Login — IoT Energia Caálá" },
+      { property: "og:title", content: "Login — SIMIE-Caála" },
       { property: "og:description", content: "Entre para continuar a monitorar a sua infraestrutura." },
     ],
   }),
@@ -70,7 +70,7 @@ export function LoginPage() {
           <div className="mb-3 grid h-12 w-12 place-items-center rounded-2xl bg-primary/15 text-primary">
             <Zap className="h-6 w-6" />
           </div>
-          <h1 className="text-xl font-bold tracking-tight">IoT Energia</h1>
+          <h1 className="text-xl font-bold tracking-tight">SIMIE</h1>
           <p className="text-xs font-semibold tracking-widest text-primary">CAALÁ</p>
         </div>
 

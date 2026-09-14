@@ -17,9 +17,9 @@ import {
 export const Route = createFileRoute("/registo")({
   head: () => ({
     meta: [
-      { title: "Registo — IoT Energia Caálá" },
+      { title: "Registo — SIMIE-Caála" },
       { name: "description", content: "Crie a sua conta de acesso ao sistema IoT Energia Caálá." },
-      { property: "og:title", content: "Registo — IoT Energia Caálá" },
+      { property: "og:title", content: "Registo — SIMIE-Caála" },
       { property: "og:description", content: "Preencha os dados para criar a sua conta de acesso." },
     ],
   }),
@@ -46,7 +46,7 @@ export function RegistoPage() {
               <Zap className="h-5 w-5" />
             </div>
             <div>
-              <p className="font-bold">IoT Energia</p>
+              <p className="font-bold">SIMIE</p>
               <p className="text-xs text-primary">CAALÁ</p>
             </div>
           </div>
