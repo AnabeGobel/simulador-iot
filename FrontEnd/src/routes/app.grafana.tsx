@@ -18,9 +18,9 @@ import { Gauge, Thermometer, Zap } from "lucide-react";
 export const Route = createFileRoute("/app/grafana")({
   head: () => ({
     meta: [
-      { title: "Grafana — IoT Energia Caálá" },
+      { title: "Grafana — SIMIE-Caála" },
       { name: "description", content: "Dashboards técnicos de séries temporais: tensão, temperatura e consumo." },
-      { property: "og:title", content: "Grafana — IoT Energia Caálá" },
+      { property: "og:title", content: "Grafana — SIMIE-Caála" },
       { property: "og:description", content: "Análise dos dados IoT em séries temporais." },
     ],
   }),

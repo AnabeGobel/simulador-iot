@@ -11,7 +11,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 export const Route = createFileRoute("/login")({
   head: () => ({
     meta: [
-      { title: "SIMIE-Caála" },
+      { title: "Login — SIMIE-Caála" },
       { name: "description", content: "Aceda à sua conta do sistema de monitoramento IoT Energia Caálá." },
       { property: "og:title", content: "Login — SIMIE-Caála" },
       { property: "og:description", content: "Entre para continuar a monitorar a sua infraestrutura." },

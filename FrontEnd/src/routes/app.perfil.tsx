@@ -13,9 +13,9 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/app/perfil")({
   head: () => ({
     meta: [
-      { title: "Meu Perfil — IoT Energia Caálá" },
+      { title: "Meu Perfil — SIMIE-Caála" },
       { name: "description", content: "Dados da conta, sessão e alteração de palavra-passe." },
-      { property: "og:title", content: "Meu Perfil — IoT Energia Caálá" },
+      { property: "og:title", content: "Meu Perfil — SIMIE-Caála" },
       { property: "og:description", content: "Gere a sua conta e a sua palavra-passe." },
     ],
   }),

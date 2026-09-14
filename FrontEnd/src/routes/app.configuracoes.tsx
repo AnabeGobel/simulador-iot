@@ -15,9 +15,9 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/app/configuracoes")({
   head: () => ({
     meta: [
-      { title: "Configurações — IoT Energia Caálá" },
+      { title: "Configurações — SIMIE-Caála" },
       { name: "description", content: "Limites de deteção, regras de alertas e definições do sistema." },
-      { property: "og:title", content: "Configurações — IoT Energia Caálá" },
+      { property: "og:title", content: "Configurações — SIMIE-Caála" },
       { property: "og:description", content: "Configure limites, alertas e o tema do sistema." },
     ],
   }),

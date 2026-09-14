@@ -5,10 +5,12 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { FileText, Printer, CheckSquare, Square, Filter, BarChart3, Loader2, AlertCircle } from 'lucide-react'
 import { obterEstacoes, obterDadosRelatorio } from '@/services/api'
+import { useAuth } from '@/lib/auth'
 
 export const Route = createFileRoute('/relatorios')({
   component: RelatoriosComponent,
 })
+
 
 interface ParametrosSelecao {
   temperatura: boolean
@@ -76,6 +78,8 @@ interface DadosRelatorioBackend {
 }
 
 function RelatoriosComponent() {
+  const { sessao } = useAuth()
+
   // Lista dinâmica de estações
   const [estacoesLista, setEstacoesLista] = useState<EstacaoItem[]>([])
   const [loadingEstacoes, setLoadingEstacoes] = useState(true)
@@ -90,9 +94,6 @@ function RelatoriosComponent() {
   const [loadingGerar, setLoadingGerar] = useState(false)
   const [erro, setErro] = useState<string | null>(null)
   const [dadosReais, setDadosReais] = useState<DadosRelatorioBackend | null>(null)
-
-  // Dados do Utilizador Logado
-  const [usuarioLogado, setUsuarioLogado] = useState('Artur Devo Catimba')
 
   const [parametros, setParametros] = useState<ParametrosSelecao>({
     temperatura: true,
@@ -118,16 +119,6 @@ function RelatoriosComponent() {
         setLoadingEstacoes(false)
       }
 
-      // Recupera o nome do utilizador do localStorage se existir
-      const usuarioSalvo = localStorage.getItem('@iot_caala:usuario')
-      if (usuarioSalvo) {
-        try {
-          const parsed = JSON.parse(usuarioSalvo)
-          if (parsed?.nome) setUsuarioLogado(parsed.nome)
-        } catch {
-          // Mantém o valor padrão caso ocorra erro no parse
-        }
-      }
     }
 
     carregarDadosIniciais()
@@ -337,10 +328,10 @@ function RelatoriosComponent() {
                   {/* Dados do Emissor do Documento */}
                   <div className="mt-4 grid grid-cols-2 gap-2 text-xs text-muted-foreground print:text-black">
                     <div>
-                      <span className="font-semibold text-foreground print:text-black">Gerado Por:</span> {dadosReais.emissor?.nome || usuarioLogado}
+                      <span className="font-semibold text-foreground print:text-black">Gerado Por:</span> {dadosReais.emissor?.nome || sessao?.nome || 'Utilizador autenticado'}
                     </div>
                     <div>
-                      <span className="font-semibold text-foreground print:text-black">Contato:</span> {dadosReais.emissor?.contato || '(+244) 923 000 000'}
+                      <span className="font-semibold text-foreground print:text-black">Contato:</span> {dadosReais.emissor?.contato || sessao?.email || 'Não informado'}
                     </div>
                     <div>
                       <span className="font-semibold text-foreground print:text-black">Período:</span> {dataInicio} — {dataFim}
@@ -356,9 +347,9 @@ function RelatoriosComponent() {
                   <h4 className="font-semibold text-foreground print:text-black mb-1">Informações da Estação</h4>
                   <div className="grid grid-cols-2 gap-2">
                     <p><span className="text-muted-foreground print:text-gray-700">Estação:</span> {estacao}</p>
-                    <p><span className="text-muted-foreground print:text-gray-700">Dispositivo:</span> {dadosReais.estacaoInfo?.dispositivo || 'ESP32-WOKWI-02'}</p>
-                    <p><span className="text-muted-foreground print:text-gray-700">Localização:</span> {dadosReais.estacaoInfo?.localizacao || 'Subestação Caála Principal'}</p>
-                    <p><span className="text-muted-foreground print:text-gray-700">Status no Período:</span> {dadosReais.estacaoInfo?.status || 'Ativo / Em Monitoramento'}</p>
+                    <p><span className="text-muted-foreground print:text-gray-700">Dispositivo:</span> {dadosReais.estacaoInfo?.dispositivo || 'Não informado'}</p>
+                    <p><span className="text-muted-foreground print:text-gray-700">Localização:</span> {dadosReais.estacaoInfo?.localizacao || 'Não informada'}</p>
+                    <p><span className="text-muted-foreground print:text-gray-700">Status no Período:</span> {dadosReais.estacaoInfo?.status || 'Não informado'}</p>
                   </div>
                 </div>
 

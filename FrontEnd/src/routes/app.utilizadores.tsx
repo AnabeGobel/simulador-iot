@@ -16,9 +16,9 @@ import { ConfirmarAcaoDialog } from "@/components/ConfirmarAcaoDialog";
 export const Route = createFileRoute("/app/utilizadores")({
   head: () => ({
     meta: [
-      { title: "Utilizadores — IoT Energia Caálá" },
+      { title: "Utilizadores — SIMIE-Caála" },
       { name: "description", content: "Gestão de utilizadores, perfis e permissões do sistema." },
-      { property: "og:title", content: "Utilizadores — IoT Energia Caálá" },
+      { property: "og:title", content: "Utilizadores — SIMIE-Caála" },
       { property: "og:description", content: "Controle de acesso por perfil: admin, técnico e operador." },
     ],
   }),

@@ -27,9 +27,9 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/app/monitoramento")({
   head: () => ({
     meta: [
-      { title: "Monitoramento — IoT Energia Caálá" },
+      { title: "Monitoramento — SIMIE-Caála" },
       { name: "description", content: "Acompanhe tensão, corrente, temperatura, vibração e inclinação em tempo real." },
-      { property: "og:title", content: "Monitoramento — IoT Energia Caálá" },
+      { property: "og:title", content: "Monitoramento — SIMIE-Caála" },
       { property: "og:description", content: "Dados em tempo real das estações IoT da Caála." },
     ],
   }),

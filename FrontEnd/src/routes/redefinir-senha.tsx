@@ -9,7 +9,7 @@ import { toast } from "sonner";
 
 export const Route = createFileRoute("/redefinir-senha")({
   head: () => ({
-    meta: [{ title: "Definir nova palavra-passe — IoT Energia Caálá" }],
+    meta: [{ title: "Definir nova palavra-passe — SIMIE-Caála" }],
   }),
   component: RedefinirSenha,
 });
@@ -76,7 +76,7 @@ function RedefinirSenha() {
             <Zap className="h-5 w-5" />
           </div>
           <div>
-            <p className="font-bold">IoT Energia</p>
+            <p className="font-bold">SIMIE</p>
             <p className="text-xs text-primary">CAALÁ</p>
           </div>
         </div>

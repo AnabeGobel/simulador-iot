@@ -9,12 +9,12 @@ import { supabase } from "@/lib/supabaseClient";
 export const Route = createFileRoute("/recuperar-senha")({
   head: () => ({
     meta: [
-      { title: "Recuperar palavra-passe — IoT Energia Caálá" },
+      { title: "Recuperar palavra-passe — SIMIE-Caála" },
       {
         name: "description",
-        content: "Recupere o acesso à sua conta do sistema de monitoramento IoT Energia Caálá.",
+        content: "Recupere o acesso à sua conta do sistema de monitoramento SIMIE-Caála.",
       },
-      { property: "og:title", content: "Recuperar palavra-passe — IoT Energia Caálá" },
+      { property: "og:title", content: "Recuperar palavra-passe — SIMIE-Caála" },
       { property: "og:description", content: "Enviaremos instruções de recuperação para o seu e-mail." },
     ],
   }),
@@ -59,7 +59,7 @@ export function RecuperarPage() {
             <Zap className="h-5 w-5" />
           </div>
           <div>
-            <p className="font-bold">IoT Energia</p>
+            <p className="font-bold">SIMIE</p>
             <p className="text-xs text-primary">CAALÁ</p>
           </div>
         </div>

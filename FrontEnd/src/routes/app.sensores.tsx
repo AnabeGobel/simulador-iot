@@ -15,9 +15,9 @@ import { ConfirmarAcaoDialog } from "@/components/ConfirmarAcaoDialog";
 export const Route = createFileRoute("/app/sensores")({
   head: () => ({
     meta: [
-      { title: "Sensores — IoT Energia Caálá" },
+      { title: "Sensores — SIMIE-Caála" },
       { name: "description", content: "Sensores elétricos e estruturais associados às estações IoT." },
-      { property: "og:title", content: "Sensores — IoT Energia Caálá" },
+      { property: "og:title", content: "Sensores — SIMIE-Caála" },
       { property: "og:description", content: "Configuração e estado dos sensores da rede." },
     ],
   }),

@@ -12,9 +12,9 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/app/anomalias")({
   head: () => ({
     meta: [
-      { title: "Anomalias — IoT Energia Caálá" },
+      { title: "Anomalias — SIMIE-Caála" },
       { name: "description", content: "Deteção de sobretensão, sobrecorrente, temperatura elevada e anomalias estruturais." },
-      { property: "og:title", content: "Anomalias — IoT Energia Caálá" },
+      { property: "og:title", content: "Anomalias — SIMIE-Caála" },
       { property: "og:description", content: "Análise e classificação de severidade das anomalias." },
     ],
   }),

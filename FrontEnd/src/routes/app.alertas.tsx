@@ -12,9 +12,9 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/app/alertas")({
   head: () => ({
     meta: [
-      { title: "Alertas — IoT Energia Caálá" },
+      { title: "Alertas — SIMIE-Caála" },
       { name: "description", content: "Alertas ativos e histórico gerado pela deteção de anomalias." },
-      { property: "og:title", content: "Alertas — IoT Energia Caálá" },
+      { property: "og:title", content: "Alertas — SIMIE-Caála" },
       { property: "og:description", content: "Consulte, filtre e resolva os alertas da rede." },
     ],
   }),
