@@ -4,10 +4,14 @@ import { supabase } from '../lib/supabaseClient';
 // URL base do backend Express.
 // Se o projeto usa Vite (mais comum com TanStack Router), a variável certa
 // é VITE_API_URL, não NEXT_PUBLIC_API_URL. Mantemos os dois por segurança.
-const API_URL =
+const API_URL_CONFIGURADA =
   (typeof import.meta !== 'undefined' && (import.meta as any).env?.VITE_API_URL) ||
   (typeof process !== 'undefined' && (process as any).env?.NEXT_PUBLIC_API_URL) ||
   'http://localhost:3001/api';
+
+const API_URL = API_URL_CONFIGURADA.replace(/\/$/, '').endsWith('/api')
+  ? API_URL_CONFIGURADA.replace(/\/$/, '')
+  : `${API_URL_CONFIGURADA.replace(/\/$/, '')}/api`;
 
 export const api = axios.create({
   baseURL: API_URL,
