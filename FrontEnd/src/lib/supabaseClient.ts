@@ -19,4 +19,10 @@ if (!supabaseUrl || !supabaseAnonKey) {
   );
 }
 
-export const supabase = createClient(supabaseUrl || "", supabaseAnonKey || "");
+// Mantém o SSR renderizável quando as variáveis ainda não foram cadastradas
+// no provedor de deploy. As operações Supabase continuarão a falhar até que
+// as variáveis reais sejam configuradas na Vercel.
+export const supabase = createClient(
+  supabaseUrl || "https://configuracao-supabase-incompleta.invalid",
+  supabaseAnonKey || "configuracao-supabase-incompleta",
+);
