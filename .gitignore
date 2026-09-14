@@ -1,0 +1,11 @@
+# Generated deployment artifacts
+.vercel/
+FrontEnd/.vercel/
+
+# Local environment files
+.env
+.env.*
+!*.env.example
+
+# Backend build output
+backend/dist/
