@@ -21,6 +21,21 @@ npm i
 npm run dev
 ```
 
+## Password recovery
+
+Configure the frontend environment variables with the Supabase project values:
+
+```env
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key
+VITE_APP_URL=https://your-public-frontend-domain.example
+```
+
+`VITE_APP_URL` is used for password recovery links in production. When it is
+not set, local development uses the current origin automatically. In Supabase,
+add `https://your-public-frontend-domain.example/redefinir-senha` to the Auth
+redirect URLs, and keep `http://localhost:8080/redefinir-senha` for local tests.
+
 ## Built with
 
 - TanStack Start
