@@ -33,7 +33,8 @@ export function RecuperarPage() {
     setAEnviar(true);
     try {
       const urlPublica = import.meta.env["VITE_APP_URL"]?.trim().replace(/\/$/, "");
-      const urlBase = urlPublica || window.location.origin;
+      const urlLocal = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/i.test(urlPublica || "");
+      const urlBase = urlPublica && !urlLocal ? urlPublica : window.location.origin;
       const { error } = await supabase.auth.resetPasswordForEmail(email.trim().toLowerCase(), {
         redirectTo: `${urlBase}/redefinir-senha`,
       });

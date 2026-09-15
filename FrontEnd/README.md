@@ -33,7 +33,7 @@ VITE_APP_URL=https://your-public-frontend-domain.example
 
 `VITE_APP_URL` is used for password recovery links in production. When it is
 not set, local development uses the current origin automatically. In Supabase,
-add `https://your-public-frontend-domain.example/redefinir-senha` to the Auth
+add `https://simulador-iot.vercel.app/redefinir-senha` to the Auth
 redirect URLs, and keep `http://localhost:8080/redefinir-senha` for local tests.
 
 ## Built with
